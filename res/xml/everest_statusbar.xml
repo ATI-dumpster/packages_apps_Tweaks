@@ -26,6 +26,13 @@
             android:summary="@string/status_bar_colored_icons_summary"
             android:defaultValue="false" />
 
+        <!-- Notification counter -->
+        <com.android.settings.prefrences.SystemSettingSwitchPreference
+            android:key="statusbar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -88,5 +95,6 @@
             android:title="@string/status_bar_battery_bar_title"
             android:summary="@string/status_bar_battery_bar_summary"
             android:fragment="com.android.settings.fragments.statusbar.BatteryBar" />
+
     </PreferenceCategory>
 </PreferenceScreen>
