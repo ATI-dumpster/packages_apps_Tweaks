@@ -17,7 +17,10 @@
 package com.android.tweaks.categories;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 
@@ -42,13 +45,35 @@ import java.util.List;
 public class BatterySettings extends SettingsPreferenceFragment 
             implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_BATTERY_SETTINGS = "battery_settings";
+    private Preference mBatterySettings;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.everest_battery);
-        PreferenceScreen prefSet = getPreferenceScreen();
-        final Resources res = getResources();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
+        
+        mBatterySettings = findPreference(KEY_BATTERY_SETTINGS);
+        updateBatteryPercentage();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateBatteryPercentage();
+    }
+
+    private void updateBatteryPercentage() {
+        if (mBatterySettings != null) {
+            IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+            Intent batteryStatus = getContext().registerReceiver(null, ifilter);
+            
+            int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+            float batteryPct = level * 100 / (float)scale;
+            
+            mBatterySettings.setSummary(String.format("Current battery level: %.0f%%", batteryPct));
+        }
     }
 
     @Override
@@ -60,13 +85,14 @@ public class BatterySettings extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.EVEREST;
     }
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(
                         Context context, boolean enabled) {
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.everest_gestures;
+                    sir.xmlResId = R.xml.everest_battery;
                     return Arrays.asList(sir);
                 }
 

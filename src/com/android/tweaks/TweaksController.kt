@@ -43,20 +43,8 @@ class TweaksController(context: Context) : AbstractPreferenceController(context)
 
        val TweaksClickMap = mapOf(
            R.id.fonts_card to "com.android.settings.Settings\$TweaksFontsActivity",
-           R.id.theme_card to "com.android.settings.Settings\$TweaksThemesActivity",
-           R.id.profile_card to "com.android.settings.Settings\$TweaksProfileActivity",
-           R.id.about_card to "com.android.settings.Settings\$TweaksAboutActivity",
-           R.id.lockscreen_card to "com.android.settings.Settings\$TweaksLockscreenActivity",
-           R.id.volume_card to "com.android.settings.Settings\$TweaksVolumeActivity",
-           R.id.notifications_card to "com.android.settings.Settings\$TweaksNotificationsActivity",
-           R.id.qs_card to "com.android.settings.Settings\$TweaksQuickSettingsActivity",
-           R.id.statusbar_card to "com.android.settings.Settings\$TweaksStatusBarActivity",
-           R.id.gestures_card to "com.android.settings.Settings\$TweaksGesturesActivity",
-           R.id.clockface_card to "com.android.settings.Settings\$TweaksClockFacesActivity",
-           R.id.power_card to "com.android.settings.Settings\$TweaksPowerMenuActivity",
-           R.id.battery_card to "com.android.settings.Settings\$TweaksBatteryActivity",
-           R.id.system_card to "com.android.settings.Settings\$TweaksSystemActivity",
-           R.id.misc_card to "com.android.settings.Settings\$TweaksMiscActivity"
+           R.id.themes_card to "com.android.settings.Settings\$TweaksThemeSettings",
+           R.id.clockface_card to "com.android.settings.Settings\$TweaksClockFacesActivity"
        )
 
        TweaksClickMap.forEach { (viewId, activityName) ->

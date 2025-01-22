@@ -39,13 +39,13 @@ import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class PowerSettings extends SettingsPreferenceFragment 
+public class ButtonsSettings extends SettingsPreferenceFragment 
             implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.everest_power);
+        addPreferencesFromResource(R.xml.everest_buttons);
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -66,7 +66,7 @@ public class PowerSettings extends SettingsPreferenceFragment
                 public List<SearchIndexableResource> getXmlResourcesToIndex(
                         Context context, boolean enabled) {
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.everest_gestures;
+                    sir.xmlResId = R.xml.everest_buttons;
                     return Arrays.asList(sir);
                 }
 
