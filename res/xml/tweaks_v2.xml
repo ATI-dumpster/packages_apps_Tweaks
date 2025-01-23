@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+     Copyright (C) 2024-2025 the EverestOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/tweaks_title" >
+
+        <!-- Quick Access (Lockscreen, fonts and clock faces)-->
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="tweaks_dashboard_quick_access"
+            android:layout="@layout/tweaks"
+            android:selectable="false"/>
+
+        <PreferenceCategory
+            android:key="interface_category"
+            android:title="Interface">
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.ThemeSettings"
+                    android:icon="@drawable/ic_tweaks_themes"
+                    android:summary="@string/theme_summary"
+                    android:title="@string/theme_title"
+                    settings:layout="@layout/everest_cardview_single_left" />
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.StatusBarSettings"
+                    android:icon="@drawable/ic_tweaks_statusbar"
+                    android:summary="@string/statusbar_summary"
+                    android:title="@string/status_bar_title"
+                    settings:layout="@layout/everest_cardview_single_right" />
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.QuickSettings"
+                    android:icon="@drawable/ic_tweaks_qs"
+                    android:summary="@string/quicksettings_summary"
+                    android:title="@string/qs_panel_title"
+                    settings:layout="@layout/everest_cardview_single_left" />
+
+                <Preference
+                    android:key="battery_settings"
+                    android:fragment="com.android.tweaks.categories.BatterySettings"
+                    android:icon="@drawable/ic_tweaks_battery"
+                    android:summary="@string/summary_placeholder"
+                    android:title="@string/battery_title"
+                    settings:layout="@layout/everest_cardview_single_right" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="system_category"
+            android:title="System">
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.NotificationSettings"
+                    android:icon="@drawable/ic_tweaks_notification"
+                    android:summary="@string/notifications_summary"
+                    android:title="@string/notification_title"
+                    settings:layout="@layout/everest_cardview_single_left" />
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.ButtonsSettings"
+                    android:icon="@drawable/ic_tweaks_buttons"
+                    android:summary="@string/buttons_summary"
+                    android:title="@string/buttons_title"
+                    settings:layout="@layout/everest_cardview_single_right" />
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.SystemSettings"
+                    android:icon="@drawable/ic_tweaks_system"
+                    android:summary="@string/system_summary"
+                    android:title="@string/system_dashboard_title"
+                    settings:layout="@layout/everest_cardview_single_left" />
+
+                <Preference
+                    android:fragment="com.android.tweaks.categories.MiscSettings"
+                    android:icon="@drawable/ic_tweaks_misc"
+                    android:summary="@string/misc_summary"
+                    android:title="@string/misc_dashboard_title"
+                    settings:layout="@layout/everest_cardview_single_right" />
+
+        </PreferenceCategory>
+</PreferenceScreen>

@@ -30,6 +30,10 @@
     <string name="lockscreen_title">Lockscreen</string>
     <string name="fonts_title">Fonts</string>
     <string name="clockfaces_title">Clock Faces</string>
+    <string name="about_title">About Everest</string>
+    <string name="profile_title">Profile</string>
+    <string name="volume_title">Volume</string>
+    <string name="power_title">Power</string>
 
     <!--Categories Summary-->
     <string name="buttons_summary">Customize your buttons</string>
