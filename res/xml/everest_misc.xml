@@ -8,4 +8,10 @@
     android:title="@string/misc_dashboard_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+	<SwitchPreferenceCompat
+	    android:key="design_switch"
+            android:title="Alternative Design"
+    	    android:summary="Switch between design layouts"
+       	    android:defaultValue="false"/>
+
 </PreferenceScreen>
