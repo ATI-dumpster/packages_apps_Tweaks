@@ -23,4 +23,10 @@
             android:layout="@layout/tweaks"
             android:selectable="false"/>
 
+        <SwitchPreferenceCompat
+            android:key="design_switch"
+            android:title="Enable Revamped Version"
+            android:summary="Switch between tweaks design"
+            android:defaultValue="false"/>
+
 </PreferenceScreen> 

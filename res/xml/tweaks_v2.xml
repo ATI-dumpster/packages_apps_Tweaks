@@ -20,7 +20,7 @@
         <!-- Quick Access (Lockscreen, fonts and clock faces)-->
         <com.android.settingslib.widget.LayoutPreference
             android:key="tweaks_dashboard_quick_access"
-            android:layout="@layout/tweaks"
+            android:layout="@layout/tweaks_v2"
             android:selectable="false"/>
 
         <PreferenceCategory
@@ -91,4 +91,11 @@
                     settings:layout="@layout/everest_cardview_single_right" />
 
         </PreferenceCategory>
+
+        <SwitchPreferenceCompat
+            android:key="design_switch"
+            android:title="Enable Revamped Version"
+            android:summary="Switch between tweaks design"
+            android:defaultValue="false"/>
+
 </PreferenceScreen>
